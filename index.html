@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form name ="f">
+    <textarea name="txt" onkeydown="nhap()" cols="40" rows="10" style="margin: 0px;width: 400px; height: 50px "></textarea>
+</form>
+<script>
+let a = ["0","1","2","3","4","5","6","7","8","9","10"];
+let n = "";
+function nhap(){
+    let t = document.f.txt.value;
+    for(let i =0; i<t.length;i++){
+        n+=a[i];
+        if(t.length===11){
+            document.f.txt.value = "";
+            n="";
+        }
+    }
+    document.f.txt.value=n;
+    n="";
+    setTimeout("nhap()",1);
+}
+</script>
+</body>
+</html>
